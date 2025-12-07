@@ -12,7 +12,7 @@ Conceptos Contables Relacionados:
   agrupa conceptos similares para facilitar su recuperación.
 """
 
-from typing import List, Optional, Dict, Any
+from typing import List, Optional, Dict, Any, Tuple
 import logging
 from pathlib import Path
 
@@ -222,7 +222,7 @@ class VectorStore:
         self,
         query: str,
         k: int = 4
-    ) -> List[tuple[Document, float]]:
+    ) -> List[Tuple[Document, float]]:
         """
         Realiza una búsqueda de similitud con puntuaciones.
         

@@ -201,6 +201,10 @@ class DocumentIngestor:
         Concepto Contable:
             Similar a listar los libros contables o fuentes de
             información que están disponibles en el sistema.
+            
+        Nota: ChromaDB no proporciona fácilmente una lista de fuentes únicas
+        en su API actual. Esta funcionalidad está limitada y requiere
+        consultas más complejas o metadata tracking adicional.
         """
         try:
             # Intentar cargar el almacén vectorial
@@ -215,7 +219,12 @@ class DocumentIngestor:
             
             logger.info(f"Almacén vectorial contiene {doc_count} documentos")
             
-            return []  # ChromaDB no proporciona fácilmente lista de fuentes únicas
+            # Limitación actual: ChromaDB no expone fácilmente fuentes únicas
+            # Para implementar esto completamente, se requeriría:
+            # 1. Metadata tracking adicional durante ingesta
+            # 2. Consultas personalizadas a la colección
+            # 3. O un índice separado de fuentes
+            return []
             
         except Exception as e:
             logger.error(f"Error al listar fuentes: {str(e)}")

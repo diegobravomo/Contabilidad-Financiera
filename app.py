@@ -15,6 +15,8 @@ Conceptos Contables:
   similar a cómo un sistema ERP integra diferentes módulos contables.
 - Proporciona trazabilidad y referencias, como las notas a los
   estados financieros.
+
+Nota: Requiere Streamlit >= 1.27.0 para st.rerun() (antes st.experimental_rerun())
 """
 
 import sys
